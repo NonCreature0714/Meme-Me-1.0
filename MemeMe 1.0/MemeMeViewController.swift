@@ -25,8 +25,8 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
+        NSStrokeWidthAttributeName: -5.0,
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 3.0
     ]
     
     override func viewWillAppear(animated: Bool) {
@@ -36,17 +36,13 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         topTextField.delegate = self
         topTextField.text = "TOP"
-        topTextField.textAlignment = NSTextAlignment.Center
-        topTextField.defaultTextAttributes = memeTextAttributes
+        configureText(topTextField)
         
         bottomTextField.delegate = self
         bottomTextField.text = "BOTTOM"
-        bottomTextField.textAlignment = NSTextAlignment.Center
-        bottomTextField.defaultTextAttributes = memeTextAttributes
+        configureText(bottomTextField)
         
         imagePickedView.image = UIImage(named: "PixelArt")
-        //imagePickedView.image = UIImage(named: "Conan")
-        
     }
     
     @IBAction func pickImage(sender: AnyObject) {
@@ -64,6 +60,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         default:
             print("Error in pickImageFunction.")
         }
+        
         presentViewController(controller, animated: true, completion: nil)
     }
     
@@ -95,7 +92,8 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         return true
     }
     
-    
-    
-    
+    func configureText(textField: UITextField){
+        textField.textAlignment = NSTextAlignment.Center
+        textField.defaultTextAttributes = memeTextAttributes
+    }
 }
