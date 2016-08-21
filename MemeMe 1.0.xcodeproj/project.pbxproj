@@ -14,6 +14,7 @@
 		4E0548091D6780D500FFF470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0548071D6780D500FFF470 /* LaunchScreen.storyboard */; };
 		4E0548141D6780D500FFF470 /* MemeMe_1_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0548131D6780D500FFF470 /* MemeMe_1_0Tests.swift */; };
 		4E05481F1D6780D500FFF470 /* MemeMe_1_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05481E1D6780D500FFF470 /* MemeMe_1_0UITests.swift */; };
+		4E05482D1D67811300FFF470 /* MemeMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05482C1D67811300FFF470 /* MemeMeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4E05481A1D6780D500FFF470 /* MemeMe 1.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MemeMe 1.0UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E05481E1D6780D500FFF470 /* MemeMe_1_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMe_1_0UITests.swift; sourceTree = "<group>"; };
 		4E0548201D6780D500FFF470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E05482C1D67811300FFF470 /* MemeMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeMeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				4E0548051D6780D500FFF470 /* Assets.xcassets */,
 				4E0548071D6780D500FFF470 /* LaunchScreen.storyboard */,
 				4E05480A1D6780D500FFF470 /* Info.plist */,
+				4E05482C1D67811300FFF470 /* MemeMeViewController.swift */,
 			);
 			path = "MemeMe 1.0";
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				4E0548011D6780D500FFF470 /* ViewController.swift in Sources */,
 				4E0547FF1D6780D500FFF470 /* AppDelegate.swift in Sources */,
+				4E05482D1D67811300FFF470 /* MemeMeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
