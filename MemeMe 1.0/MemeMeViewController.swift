@@ -15,6 +15,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var cameraPickerButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    var meme = Meme()
     
     //instantiate delegates, if necessary
     
@@ -31,6 +32,11 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewWillAppear(animated: Bool) {
         cameraPickerButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        subcribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        unsubscribeToKeyboardNotifications()
     }
     
     override func viewDidLoad() {
@@ -63,6 +69,47 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         presentViewController(controller, animated: true, completion: nil)
     }
+    /** 
+     *
+     *Seems most of the actions for saving/sharing are similar... lets trim it down!
+     */
+    //vvvvvv
+    //vvvvvv
+    @IBAction func makeMeme(sender: AnyObject) {
+        //TODO: finish it
+        saveMeme()
+    }
+    
+    @IBAction func shareMeme(sender: AnyObject) {
+        //TODO: finish it
+    }
+    
+    @IBAction func saveMeme(sender: AnyObject) {
+        saveMeme()
+    }
+        
+    func saveMemeToPhotoLibrary(image: UIImage!) {
+        //takes generated meme image and stores in Photolibrary
+    }
+    //^^^^^^
+    //^^^^^^
+    func saveMeme() {
+        meme = Meme(topTextField: topTextField.text, bottomTextField: bottomTextField.text, originalImage: imagePickedView.image, memedImage: generateMemedImage())
+    }
+    
+    func generateMemedImage() -> UIImage
+    {
+        //TODO: hide navigation and toolbar
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //TOOD: show navigation and toolbar
+        
+        return memedImage
+    }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         print("imagePickerController called.")
@@ -77,10 +124,6 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    /*func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        textField.placeholder = nil
-        return true
-    }*/
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField.text! == "TOP" || textField.text! == "BOTTOM" {
             textField.text = ""
@@ -96,4 +139,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         textField.textAlignment = NSTextAlignment.Center
         textField.defaultTextAttributes = memeTextAttributes
     }
+    
+    
+    
 }
