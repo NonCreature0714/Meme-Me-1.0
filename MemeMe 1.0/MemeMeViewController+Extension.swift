@@ -1,5 +1,5 @@
 //
-//  MemeMeViewController+Subscriptions.swift
+//  MemeMeViewController+Extension.swift
 //  MemeMe 1.0
 //
 //  Created by William Brubaker on 8/21/16.
@@ -28,7 +28,6 @@ extension MemeMeViewController {
         if bottomTextField.editing {
             view.frame.origin.y -= getKeyboardHeight(notification)
         }
-        
     }
     
     func keyboardWillHide(notification: NSNotification) {

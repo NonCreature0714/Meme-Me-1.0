@@ -18,21 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="PixelArt" translatesAutoresizingMaskIntoConstraints="NO" id="RUF-hu-FS6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RUF-hu-FS6">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="56l-4d-1ch" userLabel="TopTextField">
-                                <rect key="frame" x="252" y="46" width="97" height="19"/>
+                                <rect key="frame" x="20" y="46" width="560" height="19"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="Ny6-h8-XnU"/>
+                                    <constraint firstAttribute="width" constant="560" id="Ny6-h8-XnU"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Bottom" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AcG-6T-DNr" userLabel="BottomTextField">
-                                <rect key="frame" x="252" y="513" width="97" height="19"/>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" placeholder="Bottom" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AcG-6T-DNr" userLabel="BottomTextField">
+                                <rect key="frame" x="20" y="513" width="560" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -50,26 +50,16 @@
                                             <action selector="pickImage:" destination="BYZ-38-t0r" id="4j5-zY-rzw"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="K7g-uD-qjK"/>
-                                    <barButtonItem tag="2" title="Meme-ify" id="gQV-Og-B1C">
-                                        <connections>
-                                            <action selector="makeMeme:" destination="BYZ-38-t0r" id="Oz0-Ot-qUt"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qLe-yr-Bwo"/>
-                                    <barButtonItem tag="3" title="Save" id="3Bs-ax-q1c">
-                                        <connections>
-                                            <action selector="saveMeme:" destination="BYZ-38-t0r" id="NKB-jV-tVb"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0ab-Ox-2mP"/>
-                                    <barButtonItem tag="4" title="Share" id="Ie6-rv-lYj">
-                                        <connections>
-                                            <action selector="shareMeme:" destination="BYZ-38-t0r" id="gLN-hb-iO6"/>
-                                        </connections>
-                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hb-8A-tzv">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <color key="tintColor" red="1" green="0.75515594260186969" blue="0.44794825746504319" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="shareMeme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cCo-mg-WWU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.37937663612565442" green="0.37937663612565442" blue="0.37937663612565442" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -92,6 +82,8 @@
                         <outlet property="bottomTextField" destination="AcG-6T-DNr" id="jHH-CP-5ro"/>
                         <outlet property="cameraPickerButton" destination="rsV-b2-fVE" id="Use-gt-V6o"/>
                         <outlet property="imagePickedView" destination="RUF-hu-FS6" id="HYX-7o-zzc"/>
+                        <outlet property="pickerToolbar" destination="4di-Dd-tmM" id="smQ-za-TSn"/>
+                        <outlet property="shareButton" destination="1hb-8A-tzv" id="nAW-RQ-MhX"/>
                         <outlet property="topTextField" destination="56l-4d-1ch" id="ek1-MW-Vnq"/>
                     </connections>
                 </viewController>
@@ -100,7 +92,4 @@
             <point key="canvasLocation" x="217" y="374"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="PixelArt" width="500" height="1091"/>
-    </resources>
 </document>

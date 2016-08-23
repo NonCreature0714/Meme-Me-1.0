@@ -14,7 +14,7 @@
 		4E0548141D6780D500FFF470 /* MemeMe_1_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0548131D6780D500FFF470 /* MemeMe_1_0Tests.swift */; };
 		4E05481F1D6780D500FFF470 /* MemeMe_1_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05481E1D6780D500FFF470 /* MemeMe_1_0UITests.swift */; };
 		4E05482D1D67811300FFF470 /* MemeMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05482C1D67811300FFF470 /* MemeMeViewController.swift */; };
-		4E0548691D6AAB0300FFF470 /* MemeMeViewController+KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0548681D6AAB0300FFF470 /* MemeMeViewController+KeyboardExtension.swift */; };
+		4E0548691D6AAB0300FFF470 /* MemeMeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0548681D6AAB0300FFF470 /* MemeMeViewController+Extension.swift */; };
 		4E05486B1D6AAD5500FFF470 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E05486A1D6AAD5500FFF470 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,7 @@
 		4E05481E1D6780D500FFF470 /* MemeMe_1_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMe_1_0UITests.swift; sourceTree = "<group>"; };
 		4E0548201D6780D500FFF470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E05482C1D67811300FFF470 /* MemeMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeMeViewController.swift; sourceTree = "<group>"; };
-		4E0548681D6AAB0300FFF470 /* MemeMeViewController+KeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MemeMeViewController+KeyboardExtension.swift"; sourceTree = "<group>"; };
+		4E0548681D6AAB0300FFF470 /* MemeMeViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MemeMeViewController+Extension.swift"; sourceTree = "<group>"; };
 		4E05486A1D6AAD5500FFF470 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +107,7 @@
 				4E0548071D6780D500FFF470 /* LaunchScreen.storyboard */,
 				4E05480A1D6780D500FFF470 /* Info.plist */,
 				4E05482C1D67811300FFF470 /* MemeMeViewController.swift */,
-				4E0548681D6AAB0300FFF470 /* MemeMeViewController+KeyboardExtension.swift */,
+				4E0548681D6AAB0300FFF470 /* MemeMeViewController+Extension.swift */,
 				4E05486A1D6AAD5500FFF470 /* Meme.swift */,
 			);
 			path = "MemeMe 1.0";
@@ -264,7 +264,7 @@
 			files = (
 				4E0547FF1D6780D500FFF470 /* AppDelegate.swift in Sources */,
 				4E05482D1D67811300FFF470 /* MemeMeViewController.swift in Sources */,
-				4E0548691D6AAB0300FFF470 /* MemeMeViewController+KeyboardExtension.swift in Sources */,
+				4E0548691D6AAB0300FFF470 /* MemeMeViewController+Extension.swift in Sources */,
 				4E05486B1D6AAD5500FFF470 /* Meme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
