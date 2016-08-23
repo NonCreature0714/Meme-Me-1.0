@@ -17,8 +17,13 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIButton!
+    
+    
     @IBOutlet weak var pickerToolbar: UIToolbar!
-    @IBOutlet weak var cancelButton: UIButton!
+    //@IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var cancelToolbarButton: UIBarButtonItem!
+    @IBOutlet weak var shareOrCancelToolbar: UIToolbar!
+    
     
     //MARK: Class members, enums, and attributes.
     var meme = Meme()
@@ -143,7 +148,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     func hideUIElements(hide: Bool) {
         pickerToolbar.hidden = hide
         hideShare(hide)
-        cancelButton.hidden = hide
+        shareOrCancelToolbar.hidden = hide
     }
     
     //MARK: Meme generation supporting methods.
