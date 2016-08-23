@@ -18,6 +18,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var pickerToolbar: UIToolbar!
+    @IBOutlet weak var cancelButton: UIButton!
     
     //MARK: Class members, enums, and attributes.
     var meme = Meme()
@@ -76,6 +77,11 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         presentViewController(activityController, animated: true, completion: nil)
     }
     
+    @IBAction func cancelMeme(sender: AnyObject) {
+        reset()
+    }
+    
+    
     //MARK: UIImagePickerDelegate methods.
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -112,8 +118,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     func configureUI() {
         configureText(topTextField)
         configureText(bottomTextField)
-        shareButton.enabled = false
-        shareButton.hidden = true
+        hideShare(true)
     }
     
     func configureText(textField: UITextField){
@@ -137,7 +142,8 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func hideUIElements(hide: Bool) {
         pickerToolbar.hidden = hide
-        shareButton.hidden = hide
+        hideShare(hide)
+        cancelButton.hidden = hide
     }
     
     //MARK: Meme generation supporting methods.
@@ -155,7 +161,19 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         return memedImage
     }
     
+    func hideShare(hide: Bool){
+        shareButton.hidden = hide
+        shareButton.enabled = !hide
+    }
+    
     func save() {
         meme = Meme(topTextField: topTextField.text, bottomTextField: bottomTextField.text, originalImage: imagePickedView.image, memedImage: generateMemedImage())
+    }
+    
+    func reset(){
+        imagePickedView.image = nil
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        
     }
 }
