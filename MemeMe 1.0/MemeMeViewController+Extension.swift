@@ -23,7 +23,8 @@ extension MemeMeViewController {
     
     //Note: I feel like the this function and the one below it
     //can be turned into one function, but I'm not sure how to do
-    //it.
+    //it. Maybe I'm wrong however: they both receive and act upon 
+    //separate NSNotifications.
     func keyboardWillShow(notification: NSNotification) {
         if bottomTextField.editing {
             view.frame.origin.y -= getKeyboardHeight(notification)
