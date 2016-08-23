@@ -51,6 +51,10 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         configureUI()
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     //MARK: IBActions.
     @IBAction func pickImage(sender: AnyObject) {
         
@@ -71,14 +75,23 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
             presentViewController(alertController, animated: true, completion: nil)
         }
         
-        presentViewController(controller, animated: true, completion: nil)
+        presentViewController(controller, animated: true, completion: {
+            action in
+            controller.prefersStatusBarHidden()
+        })
         shareButton.enabled = true
         shareButton.hidden = false
     }
     
     @IBAction func shareMeme(sender: AnyObject) {
-        save()
-        let activityController = UIActivityViewController(activityItems: [meme.memedImage], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
+        
+        activityController.completionWithItemsHandler = { type, completed, returnedItems, error -> Void in
+            if completed {
+                self.save()
+            }
+        }
+        
         presentViewController(activityController, animated: true, completion: nil)
     }
     
@@ -151,6 +164,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         shareOrCancelToolbar.hidden = hide
     }
     
+    
     //MARK: Meme generation supporting methods.
     func generateMemedImage() -> UIImage
     {
@@ -179,6 +193,5 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         imagePickedView.image = nil
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
-        
     }
 }
