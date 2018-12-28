@@ -16,7 +16,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var cameraPickerButton: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     
     @IBOutlet weak var pickerToolbar: UIToolbar!
@@ -36,7 +36,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     //MARK: Overriden UIViewController methods.
     override func viewWillAppear(_ animated: Bool) {
-        cameraPickerButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)
+        cameraPickerButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         subcribeToKeyboardNotifications()
     }
     
@@ -62,9 +62,9 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         switch sender.tag {
         case SourceSelection.album.rawValue:
-            controller.sourceType = UIImagePickerController.SourceType.photoLibrary
+            controller.sourceType = .photoLibrary
         case SourceSelection.camera.rawValue:
-            controller.sourceType = UIImagePickerController.SourceType.camera
+            controller.sourceType = .camera
         default:
             let alertController = UIAlertController()
             alertController.title = "Meme Me Error"
@@ -77,7 +77,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         present(controller, animated: true, completion: nil)
         
         shareButton.isEnabled = true
-        shareButton.isHidden = false
+//        shareButton.isHidden = false
     }
     
     @IBAction func shareMeme(_ sender: AnyObject) {
@@ -116,7 +116,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var newText = textField.text! as NSString
         newText = newText.replacingCharacters(in: range, with: string) as NSString
-        let textSize: CGSize = newText.size(withAttributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): textField.font!]))
+        let textSize: CGSize = newText.size(withAttributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(.font): textField.font!]))
         return textSize.width < textField.bounds.size.width
     }
     
@@ -181,7 +181,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func hideShare(_ hide: Bool){
-        shareButton.isHidden = hide
+//        shareButton.isHidden = hide
         shareButton.isEnabled = !hide
     }
     

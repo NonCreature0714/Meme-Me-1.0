@@ -22,7 +22,7 @@ extension MemeMeViewController {
     
     @objc func keyboardWillShow(_ notification: Notification) {
         if bottomTextField.isEditing {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
